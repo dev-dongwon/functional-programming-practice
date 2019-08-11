@@ -1,21 +1,5 @@
 const log = console.log;
 
-const map = (f, iter) => {
-  const res = [];
-  for (const a of iter) {
-    res.push(f(a));
-  }
-  return res;
-}
-
-const filter = (f, iter) => {
-  const res = [];
-  for(const a of iter) {
-    if(f(a)) res.push(a);
-  }
-  return res;
-}
-
 const reduce = (f, acc, iter) => {
   // acc가 없이 (f, iter) 이렇게만 들어간 경우
   if (!iter) {
@@ -29,7 +13,13 @@ const reduce = (f, acc, iter) => {
   return acc;
 }
 
+// ...args로 하면 args는 배열이 반환된다
 const go = (...args) => reduce((acc, fn) => fn(acc), args);
 
-const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
-
+  go (
+    0,
+    a => a + 1,
+    a => a + 10,
+    a => a + 100,
+    log
+  )
