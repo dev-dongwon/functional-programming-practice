@@ -31,5 +31,5 @@ function *odds(l) {
 }
 
 for (const a of odds(40)) {
-  log(a);
+  // log(a);
 }

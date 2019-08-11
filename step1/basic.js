@@ -43,3 +43,7 @@ log(iter); // gen {<suspended>}
 log(iter.next()); // {value: 1, done: false}
 log(iter.next()); // {value: 3, done: false}
 log(iter.next()); // {value: undefined, done: true}
+
+// 전개연산자 - 이것도 역시 이터러블, 이터레이터 프로토콜을 따른다
+const a = [1, 2];
+log(...a);
